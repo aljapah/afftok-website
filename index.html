@@ -185,6 +185,12 @@
             border-color: var(--primary);
         }
 
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
         .mobile-menu-btn {
             display: none;
             background: none;
@@ -1358,6 +1364,17 @@
                 display: block;
             }
 
+            .nav-actions {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .lang-toggle {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+
             .hero {
                 padding: 120px 0 80px;
             }
@@ -1457,9 +1474,11 @@
                 <a href="#features" data-ar="المميزات" data-en="Features">المميزات</a>
                 <a href="#download" data-ar="التحميل" data-en="Download">التحميل</a>
                 <a href="#contact" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</a>
-                <button class="lang-toggle" onclick="toggleLanguage()">EN</button>
             </div>
-            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+            <div class="nav-actions">
+                <button class="lang-toggle" onclick="toggleLanguage()">EN</button>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+            </div>
         </div>
     </nav>
 
