@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الأسئلة الشائعة | AffTok</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary: #a31621;
+            --primary-light: #c41e2e;
+            --bg-dark: #151518;
+            --bg-card: #1e1e24;
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.8);
+            --text-muted: rgba(255, 255, 255, 0.6);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.8;
+        }
+
+        body.en {
+            font-family: 'Poppins', sans-serif;
+            direction: ltr;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(21, 21, 24, 0.95);
+            padding: 20px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(20px);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 800;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 2px;
+        }
+
+        .lang-toggle {
+            background: rgba(163, 22, 33, 0.15);
+            border: 1px solid rgba(163, 22, 33, 0.3);
+            color: var(--primary-light);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .lang-toggle:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Content */
+        main {
+            padding: 120px 0 60px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 40px;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        /* FAQ Styles */
+        .faq-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: rgba(163, 22, 33, 0.3);
+        }
+
+        .faq-item.active {
+            border-color: var(--primary);
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .faq-question span {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+            flex: 1;
+            padding-left: 16px;
+        }
+
+        body.en .faq-question span {
+            padding-left: 0;
+            padding-right: 16px;
+        }
+
+        .faq-question i {
+            color: var(--primary);
+            font-size: 14px;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+        }
+
+        .faq-answer p {
+            padding: 0 24px 20px;
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-card);
+            padding: 30px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            margin-top: 60px;
+        }
+
+        footer a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin: 0 16px;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--primary);
+        }
+
+        footer p {
+            margin-top: 20px;
+            color: rgba(255,255,255,0.5);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="AffTok" class="logo-img">
+                <span class="logo-text">AFFTOK</span>
+            </a>
+            <button class="lang-toggle" onclick="toggleLanguage()">EN</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1 data-ar="الأسئلة الشائعة" data-en="Frequently Asked Questions">الأسئلة الشائعة</h1>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span data-ar="هل المنصّة تتعامل مع الأموال أو تسجّل الأرباح؟" data-en="Does the platform handle money or record earnings?">هل المنصّة تتعامل مع الأموال أو تسجّل الأرباح؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-ar="لا، المنصّة لا تستلم مبالغ ولا تعرض رصيدًا ماليًا ولا توزّع أي عمولات. جميع المستحقات الماليّة تتم بشكل مباشر بين المستخدم والشركة وفق نظام الإحالة الخاص بها فقط." 
+                           data-en="No, the platform does not receive money, display financial balance, or distribute any commissions. All financial dues are handled directly between the user and the company according to their referral system only.">
+                            لا، المنصّة لا تستلم مبالغ ولا تعرض رصيدًا ماليًا ولا توزّع أي عمولات. جميع المستحقات الماليّة تتم بشكل مباشر بين المستخدم والشركة وفق نظام الإحالة الخاص بها فقط.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span data-ar="هل أحتاج خبرة أو ترخيص للبدء؟" data-en="Do I need experience or a license to start?">هل أحتاج خبرة أو ترخيص للبدء؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-ar="لا، لا يتطلب النظام أي ترخيص أو خبرة مسبقة، ويمكن لأي مستخدم الانضمام والاستفادة بسهولة." 
+                           data-en="No, the system does not require any license or prior experience, and any user can join and benefit easily.">
+                            لا، لا يتطلب النظام أي ترخيص أو خبرة مسبقة، ويمكن لأي مستخدم الانضمام والاستفادة بسهولة.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span data-ar="هل المنصّة مخصّصة لصنّاع المحتوى فقط؟" data-en="Is the platform only for content creators?">هل المنصّة مخصّصة لصنّاع المحتوى فقط؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-ar="لا، المنصّة متاحة للجميع: موظف، طالب، معلّم، أو أي مستخدم لديه وجود رقمي بأي مستوى." 
+                           data-en="No, the platform is available to everyone: employee, student, teacher, or any user with any level of digital presence.">
+                            لا، المنصّة متاحة للجميع: موظف، طالب، معلّم، أو أي مستخدم لديه وجود رقمي بأي مستوى.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span data-ar="هل أحتاج منتجات أو شحن أو مخزون؟" data-en="Do I need products, shipping, or inventory?">هل أحتاج منتجات أو شحن أو مخزون؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-ar="لا، النظام يعمل عبر روابط إحالة فقط، بدون بيع أو توصيل أو تخزين أو إدارة منتجات." 
+                           data-en="No, the system works through referral links only, without selling, delivering, storing, or managing products.">
+                            لا، النظام يعمل عبر روابط إحالة فقط، بدون بيع أو توصيل أو تخزين أو إدارة منتجات.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span data-ar="كيف تتحقق الاستفادة من النظام؟" data-en="How do I benefit from the system?">كيف تتحقق الاستفادة من النظام؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-ar="من خلال استخدام رابط الإحالة الرسمي مع الشركات مباشرة. دور المنصّة تقني وتنظيمي فقط دون أي تدخل مالي." 
+                           data-en="By using the official referral link directly with companies. The platform's role is technical and organizational only, without any financial intervention.">
+                            من خلال استخدام رابط الإحالة الرسمي مع الشركات مباشرة. دور المنصّة تقني وتنظيمي فقط دون أي تدخل مالي.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span data-ar="هل توجد حدود لعدد الروابط؟" data-en="Are there limits to the number of links?">هل توجد حدود لعدد الروابط؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-ar="لا، لست بحاجة لتعدد الروابط، فجميع العروض والإحالات تعمل تحت رابط رئيسي واحد فقط، مما يسهّل المشاركة والمتابعة دون إنشاء روابط منفصلة لكل جهة." 
+                           data-en="No, you don't need multiple links. All offers and referrals work under one main link only, making sharing and tracking easier without creating separate links for each entity.">
+                            لا، لست بحاجة لتعدد الروابط، فجميع العروض والإحالات تعمل تحت رابط رئيسي واحد فقط، مما يسهّل المشاركة والمتابعة دون إنشاء روابط منفصلة لكل جهة.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span data-ar="هل التسجيل أو الاستخدام مدفوع؟" data-en="Is registration or usage paid?">هل التسجيل أو الاستخدام مدفوع؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-ar="لا، جميع خدمات المنصّة مجانية بالكامل دون أي رسوم ظاهرة أو مخفيّة." 
+                           data-en="No, all platform services are completely free without any visible or hidden fees.">
+                            لا، جميع خدمات المنصّة مجانية بالكامل دون أي رسوم ظاهرة أو مخفيّة.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span data-ar="ما دور المنصّة بالتحديد؟" data-en="What exactly is the platform's role?">ما دور المنصّة بالتحديد؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-ar="توفير رابط إحالة رسمي واحد وتنظيم العلاقة بين المستخدم والشركات دون عرض أو تسجيل أو تحصيل أرباح داخل النظام." 
+                           data-en="Providing one official referral link and organizing the relationship between the user and companies without displaying, recording, or collecting profits within the system.">
+                            توفير رابط إحالة رسمي واحد وتنظيم العلاقة بين المستخدم والشركات دون عرض أو تسجيل أو تحصيل أرباح داخل النظام.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span data-ar="كيف أتابع حالة الرابط؟" data-en="How do I track my link status?">كيف أتابع حالة الرابط؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-ar="من خلال لوحة الاستخدام التي تظهر البيانات الأساسية للنقرات والارتباط فقط، دون أي عرض مالي أو رصيد." 
+                           data-en="Through the usage dashboard that shows basic click and link data only, without any financial display or balance.">
+                            من خلال لوحة الاستخدام التي تظهر البيانات الأساسية للنقرات والارتباط فقط، دون أي عرض مالي أو رصيد.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span data-ar="هل يمكن استخدام المنصّة من أي مكان؟" data-en="Can I use the platform from anywhere?">هل يمكن استخدام المنصّة من أي مكان؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-ar="نعم، يمكن استخدامها من أي دولة وفق نطاق الإحالة الذي تحدده الشركات المشاركة." 
+                           data-en="Yes, it can be used from any country according to the referral scope set by the participating companies.">
+                            نعم، يمكن استخدامها من أي دولة وفق نطاق الإحالة الذي تحدده الشركات المشاركة.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span data-ar="هل تتدخل المنصّة عند وجود خلاف أو تأخير؟" data-en="Does the platform intervene in disputes or delays?">هل تتدخل المنصّة عند وجود خلاف أو تأخير؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-ar="لا، التسويات تتم مباشرة بين المستخدم والشركة، والمنصّة ليست طرفًا ماليًا أو تحصيليًا بأي شكل." 
+                           data-en="No, settlements are made directly between the user and the company, and the platform is not a financial or collection party in any way.">
+                            لا، التسويات تتم مباشرة بين المستخدم والشركة، والمنصّة ليست طرفًا ماليًا أو تحصيليًا بأي شكل.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span data-ar="هل يمكن حذف الحساب؟" data-en="Can I delete my account?">هل يمكن حذف الحساب؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-ar="نعم، يمكن حذف الحساب والبيانات المرتبطة به في أي وقت." 
+                           data-en="Yes, you can delete your account and related data at any time.">
+                            نعم، يمكن حذف الحساب والبيانات المرتبطة به في أي وقت.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+            <a href="privacy.html" data-ar="سياسة الخصوصية" data-en="Privacy Policy">سياسة الخصوصية</a>
+            <a href="terms.html" data-ar="شروط الاستخدام" data-en="Terms of Service">شروط الاستخدام</a>
+            <p>© 2025 AffTok</p>
+        </div>
+    </footer>
+
+    <script>
+        let currentLang = 'ar';
+        
+        function toggleLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            document.documentElement.lang = currentLang;
+            document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+            document.body.classList.toggle('en', currentLang === 'en');
+            document.querySelectorAll('[data-ar]').forEach(el => {
+                el.innerHTML = el.getAttribute(`data-${currentLang}`);
+            });
+            document.querySelector('.lang-toggle').textContent = currentLang === 'ar' ? 'EN' : 'عربي';
+        }
+
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            const isActive = faqItem.classList.contains('active');
+            
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
+

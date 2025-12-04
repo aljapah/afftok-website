@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نصائح النجاح | AffTok</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary: #a31621;
+            --primary-light: #c41e2e;
+            --bg-dark: #151518;
+            --bg-card: #1e1e24;
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.8);
+            --text-muted: rgba(255, 255, 255, 0.6);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Tajawal', sans-serif; background: var(--bg-dark); color: var(--text-primary); line-height: 1.8; }
+        body.en { font-family: 'Poppins', sans-serif; direction: ltr; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+        
+        header { background: rgba(21, 21, 24, 0.95); padding: 20px 0; position: fixed; top: 0; left: 0; right: 0; z-index: 100; border-bottom: 1px solid rgba(255, 255, 255, 0.06); backdrop-filter: blur(20px); }
+        header .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .logo-img { width: 40px; height: 40px; object-fit: contain; }
+        .logo-text { font-size: 24px; font-weight: 800; color: white; font-family: 'Poppins', sans-serif; letter-spacing: 2px; }
+        .logo-icon { width: 35px; height: 35px; background: var(--primary); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 800; color: white; font-family: 'Poppins', sans-serif; }
+        .header-actions { display: flex; align-items: center; gap: 15px; }
+        .lang-btn { background: var(--primary); color: white; border: none; padding: 8px 18px; border-radius: 20px; font-size: 14px; cursor: pointer; font-weight: 600; transition: all 0.3s ease; }
+        .lang-btn:hover { opacity: 0.9; }
+        
+        main { padding-top: 100px; padding-bottom: 60px; }
+        
+        .page-header { text-align: center; margin-bottom: 50px; }
+        .page-header h1 { font-size: 2.5rem; margin-bottom: 15px; background: linear-gradient(135deg, #a31621 0%, #c41e2e 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .page-header p { color: var(--text-muted); font-size: 1.1rem; }
+        
+        .tip-card { background: var(--bg-card); border-radius: 12px; padding: 25px 30px; margin-bottom: 15px; border: 1px solid rgba(255, 255, 255, 0.06); transition: all 0.3s ease; }
+        .tip-card:hover { border-color: rgba(163, 22, 33, 0.3); }
+        .tip-header { display: flex; align-items: center; gap: 15px; margin-bottom: 12px; }
+        .tip-number { width: 36px; height: 36px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem; font-weight: 700; flex-shrink: 0; }
+        .tip-title { font-size: 1.15rem; font-weight: 700; color: var(--text-primary); }
+        .tip-content { color: var(--text-muted); font-size: 1rem; line-height: 1.8; padding-right: 50px; }
+        
+        .final-note { background: var(--bg-card); border: 1px solid rgba(163, 22, 33, 0.3); border-radius: 12px; padding: 30px; text-align: center; margin-top: 30px; }
+        .final-note i { font-size: 1.5rem; color: var(--primary); margin-bottom: 15px; display: block; }
+        .final-note p { font-size: 1.05rem; color: var(--text-secondary); }
+        
+        footer { background: var(--bg-card); padding: 25px 0; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.06); }
+        footer p { color: var(--text-muted); font-size: 0.9rem; }
+        
+        @media (max-width: 768px) { .page-header h1 { font-size: 1.8rem; } .tip-card { padding: 20px; } .tip-content { padding-right: 0; } }
+        body.en .tip-content { padding-right: 0; padding-left: 50px; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="AffTok" class="logo-img" onerror="this.outerHTML='<div class=\'logo-icon\'>A</div>'">
+                <span class="logo-text">AFFTOK</span>
+            </a>
+            <div class="header-actions">
+                <button class="lang-btn" onclick="toggleLanguage()">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="page-header">
+                <h1 data-ar="نصائح النجاح" data-en="Success Tips">نصائح النجاح</h1>
+                <p data-ar="دليلك للتميز كمروّج محترف وبناء علاقة ناجحة مع العلامات التجارية" data-en="Your guide to excelling as a professional promoter">دليلك للتميز كمروّج محترف وبناء علاقة ناجحة مع العلامات التجارية</p>
+            </div>
+
+            <div class="tip-card">
+                <div class="tip-header">
+                    <div class="tip-number">1</div>
+                    <h3 class="tip-title" data-ar="شارك رابطك في المكان الأنسب" data-en="Share Your Link in the Right Place">شارك رابطك في المكان الأنسب</h3>
+                </div>
+                <p class="tip-content" data-ar="استخدم القنوات التي يثق بها متابعوك، مثل حساباتك الاجتماعية أو مجموعاتك الخاصة أو موقعك الشخصي." data-en="Use channels that your followers trust, such as your social accounts, private groups, or personal website.">استخدم القنوات التي يثق بها متابعوك، مثل حساباتك الاجتماعية أو مجموعاتك الخاصة أو موقعك الشخصي.</p>
+            </div>
+
+            <div class="tip-card">
+                <div class="tip-header">
+                    <div class="tip-number">2</div>
+                    <h3 class="tip-title" data-ar="اختر العروض المناسبة لمجالك" data-en="Choose Offers That Match Your Niche">اختر العروض المناسبة لمجالك</h3>
+                </div>
+                <p class="tip-content" data-ar="لا تنوّع بشكل عشوائي؛ ركّز على العروض القريبة من جمهورك لتزيد فرص التفاعل الحقيقي." data-en="Do not diversify randomly; focus on offers close to your audience.">لا تنوّع بشكل عشوائي؛ ركّز على العروض القريبة من جمهورك لتزيد فرص التفاعل الحقيقي.</p>
+            </div>
+
+            <div class="tip-card">
+                <div class="tip-header">
+                    <div class="tip-number">3</div>
+                    <h3 class="tip-title" data-ar="قدّم المعلومات بوضوح" data-en="Present Information Clearly">قدّم المعلومات بوضوح</h3>
+                </div>
+                <p class="tip-content" data-ar="عند مشاركة الرابط، وضّح فكرة العرض أو الخدمة ببساطة دون مبالغة أو وعود إضافية." data-en="When sharing a link, explain the offer simply without exaggeration.">عند مشاركة الرابط، وضّح فكرة العرض أو الخدمة ببساطة دون مبالغة أو وعود إضافية.</p>
+            </div>
+
+            <div class="tip-card">
+                <div class="tip-header">
+                    <div class="tip-number">4</div>
+                    <h3 class="tip-title" data-ar="تابع تفاعل جمهورك" data-en="Monitor Your Audience Engagement">تابع تفاعل جمهورك</h3>
+                </div>
+                <p class="tip-content" data-ar="راقب أداء رابطك وفهم سلوك المستخدمين لتحديد أفضل أوقات وأماكن المشاركة." data-en="Monitor your link performance and understand user behavior.">راقب أداء رابطك وفهم سلوك المستخدمين لتحديد أفضل أوقات وأماكن المشاركة.</p>
+            </div>
+
+            <div class="tip-card">
+                <div class="tip-header">
+                    <div class="tip-number">5</div>
+                    <h3 class="tip-title" data-ar="تعاون مع العلامات التجارية المناسبة" data-en="Collaborate with the Right Brands">تعاون مع العلامات التجارية المناسبة</h3>
+                </div>
+                <p class="tip-content" data-ar="اختر الشركات التي تناسب نوع محتواك، لتكون العلاقة احترافية وواضحة ومباشرة." data-en="Choose companies that match your content type.">اختر الشركات التي تناسب نوع محتواك، لتكون العلاقة احترافية وواضحة ومباشرة.</p>
+            </div>
+
+            <div class="tip-card">
+                <div class="tip-header">
+                    <div class="tip-number">6</div>
+                    <h3 class="tip-title" data-ar="حافظ على مصداقيتك" data-en="Maintain Your Credibility">حافظ على مصداقيتك</h3>
+                </div>
+                <p class="tip-content" data-ar="تجنّب الضغط أو الإلحاح، وشارك الروابط بأسلوب طبيعي يعكس ثقتك بالجهة التي تتعاون معها." data-en="Avoid pressure or urgency, and share links naturally.">تجنّب الضغط أو الإلحاح، وشارك الروابط بأسلوب طبيعي يعكس ثقتك بالجهة التي تتعاون معها.</p>
+            </div>
+
+            <div class="tip-card">
+                <div class="tip-header">
+                    <div class="tip-number">7</div>
+                    <h3 class="tip-title" data-ar="استمر وفق وتيرتك" data-en="Work at Your Own Pace">استمر وفق وتيرتك</h3>
+                </div>
+                <p class="tip-content" data-ar="لست مضطرًا للنشر يوميًا؛ شارك الروابط في الوقت المناسب وبإيقاع يناسبك دون التزام زمني." data-en="You do not have to post daily; share links at a pace that suits you.">لست مضطرًا للنشر يوميًا؛ شارك الروابط في الوقت المناسب وبإيقاع يناسبك دون التزام زمني.</p>
+            </div>
+
+            <div class="final-note">
+                <i class="fas fa-star"></i>
+                <p data-ar="كلما كان المحتوى واضحًا وموثوقًا، كان تعاونك مع الشركات أنجح وأكثر استقرارًا." data-en="The clearer and more reliable your content, the more successful your collaboration will be.">كلما كان المحتوى واضحًا وموثوقًا، كان تعاونك مع الشركات أنجح وأكثر استقرارًا.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 AffTok. <span data-ar="جميع الحقوق محفوظة" data-en="All rights reserved">جميع الحقوق محفوظة</span>.</p>
+        </div>
+    </footer>
+
+    <script>
+        let isArabic = true;
+        function toggleLanguage() {
+            isArabic = !isArabic;
+            document.body.classList.toggle('en', !isArabic);
+            document.documentElement.lang = isArabic ? 'ar' : 'en';
+            document.documentElement.dir = isArabic ? 'rtl' : 'ltr';
+            document.querySelectorAll('[data-ar]').forEach(el => {
+                el.textContent = isArabic ? el.dataset.ar : el.dataset.en;
+            });
+            document.querySelector('.lang-btn').textContent = isArabic ? 'EN' : 'عربي';
+        }
+    </script>
+</body>
+</html>

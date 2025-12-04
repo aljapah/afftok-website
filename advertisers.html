@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بوابة المعلنين | AffTok</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary: #a31621;
+            --primary-light: #c41e2e;
+            --bg-dark: #151518;
+            --bg-card: #1e1e24;
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.8);
+            --text-muted: rgba(255, 255, 255, 0.6);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Tajawal', sans-serif; background: var(--bg-dark); color: var(--text-primary); line-height: 1.8; }
+        body.en { font-family: 'Poppins', sans-serif; direction: ltr; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+        
+        header { background: rgba(21, 21, 24, 0.95); padding: 20px 0; position: fixed; top: 0; left: 0; right: 0; z-index: 100; border-bottom: 1px solid rgba(255, 255, 255, 0.06); backdrop-filter: blur(20px); }
+        header .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .logo-img { width: 40px; height: 40px; object-fit: contain; }
+        .logo-text { font-size: 24px; font-weight: 800; color: white; font-family: 'Poppins', sans-serif; letter-spacing: 2px; }
+        .logo-icon { width: 35px; height: 35px; background: var(--primary); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 800; color: white; font-family: 'Poppins', sans-serif; }
+        .header-actions { display: flex; align-items: center; gap: 15px; }
+        .lang-btn { background: var(--primary); color: white; border: none; padding: 8px 18px; border-radius: 20px; font-size: 14px; cursor: pointer; font-weight: 600; transition: all 0.3s ease; }
+        .lang-btn:hover { opacity: 0.9; }
+        
+        main { padding-top: 100px; padding-bottom: 60px; }
+        
+        .page-header { text-align: center; margin-bottom: 50px; }
+        .page-header h1 { font-size: 2.5rem; margin-bottom: 15px; background: linear-gradient(135deg, #a31621 0%, #c41e2e 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .page-header p { color: var(--text-muted); font-size: 1.1rem; max-width: 700px; margin: 0 auto; }
+        
+        .section-card { background: var(--bg-card); border-radius: 12px; padding: 25px 30px; margin-bottom: 20px; border: 1px solid rgba(255, 255, 255, 0.06); }
+        .section-title { font-size: 1.15rem; font-weight: 700; color: var(--text-primary); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .section-title i { color: var(--primary); font-size: 1.1rem; }
+        
+        .feature-list { list-style: none; }
+        .feature-list li { padding: 10px 0; display: flex; align-items: flex-start; gap: 12px; border-bottom: 1px solid rgba(255,255,255,0.04); }
+        .feature-list li:last-child { border-bottom: none; }
+        .feature-list li i { color: var(--primary); font-size: 0.9rem; margin-top: 5px; }
+        .feature-list li span { color: var(--text-muted); font-size: 1rem; }
+        .not-list li i { color: #555; }
+        
+        .steps-list { list-style: none; }
+        .steps-list li { padding: 12px 0; display: flex; align-items: center; gap: 15px; border-bottom: 1px solid rgba(255,255,255,0.04); }
+        .steps-list li:last-child { border-bottom: none; }
+        .step-number { width: 32px; height: 32px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; flex-shrink: 0; }
+        .steps-list li span { color: var(--text-muted); font-size: 1rem; }
+        
+        .benefits-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+        .benefit-item { background: rgba(255, 255, 255, 0.03); border-radius: 10px; padding: 18px; text-align: center; border: 1px solid rgba(255, 255, 255, 0.04); }
+        .benefit-item i { font-size: 1.3rem; color: var(--primary); margin-bottom: 8px; display: block; }
+        .benefit-item span { color: var(--text-muted); font-size: 0.95rem; }
+        
+        .notice-card { background: var(--bg-card); border-radius: 12px; padding: 25px; margin-top: 20px; border: 1px solid rgba(163, 22, 33, 0.2); text-align: center; }
+        .notice-card h3 { color: var(--text-primary); font-size: 1.05rem; margin-bottom: 10px; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .notice-card h3 i { color: var(--primary); }
+        .notice-card p { color: var(--text-muted); font-size: 0.95rem; }
+        
+        .support-card { background: var(--bg-card); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 12px; padding: 30px; margin-top: 20px; text-align: center; }
+        .support-card h3 { font-size: 1.1rem; margin-bottom: 10px; color: var(--text-primary); display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .support-card h3 i { color: var(--primary); }
+        .support-card p { font-size: 0.95rem; margin-bottom: 15px; color: var(--text-muted); }
+        .support-email { display: inline-flex; align-items: center; gap: 8px; background: var(--primary); padding: 12px 25px; border-radius: 25px; color: white; text-decoration: none; font-size: 1rem; font-weight: 600; transition: all 0.3s ease; }
+        .support-email:hover { opacity: 0.9; }
+        
+        footer { background: var(--bg-card); padding: 25px 0; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.06); }
+        footer p { color: var(--text-muted); font-size: 0.9rem; }
+        
+        @media (max-width: 768px) { .page-header h1 { font-size: 1.8rem; } .section-card { padding: 20px; } .benefits-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="AffTok" class="logo-img" onerror="this.outerHTML='<div class=\'logo-icon\'>A</div>'">
+                <span class="logo-text">AFFTOK</span>
+            </a>
+            <div class="header-actions">
+                <button class="lang-btn" onclick="toggleLanguage()">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="page-header">
+                <h1 data-ar="مرحبًا بك في بوابة المعلنين" data-en="Welcome to the Advertisers Portal">مرحبًا بك في بوابة المعلنين</h1>
+                <p data-ar="هذه المساحة مخصّصة للشركات التي ترغب في إضافة عروض إحالة رسمية وربطها بالمروجين بشكل مباشر وواضح." data-en="This space is dedicated to companies that want to add official referral offers.">هذه المساحة مخصّصة للشركات التي ترغب في إضافة عروض إحالة رسمية وربطها بالمروجين بشكل مباشر وواضح.</p>
+            </div>
+
+            <div class="section-card">
+                <h2 class="section-title"><i class="fas fa-check-circle"></i> <span data-ar="ما الذي يمكنك القيام به هنا؟" data-en="What can you do here?">ما الذي يمكنك القيام به هنا؟</span></h2>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check"></i><span data-ar="تسجيل شركتك واعتماد بياناتها الأساسية" data-en="Register your company and approve its basic data">تسجيل شركتك واعتماد بياناتها الأساسية</span></li>
+                    <li><i class="fas fa-check"></i><span data-ar="إضافة عروض إحالة مباشرة للمروجين" data-en="Add direct referral offers for promoters">إضافة عروض إحالة مباشرة للمروجين</span></li>
+                    <li><i class="fas fa-check"></i><span data-ar="تحديد شروط الاستخدام لكل عرض" data-en="Set terms of use for each offer">تحديد شروط الاستخدام لكل عرض</span></li>
+                    <li><i class="fas fa-check"></i><span data-ar="متابعة بيانات الارتباط والنقر فقط" data-en="Track link and click data only">متابعة بيانات الارتباط والنقر فقط</span></li>
+                </ul>
+            </div>
+
+            <div class="section-card">
+                <h2 class="section-title"><i class="fas fa-times-circle"></i> <span data-ar="ماذا لا نقوم به؟" data-en="What we don't do?">ماذا لا نقوم به؟</span></h2>
+                <ul class="feature-list not-list">
+                    <li><i class="fas fa-times"></i><span data-ar="لا نتدخّل في أي تسويات مالية" data-en="We do not interfere in any financial settlements">لا نتدخّل في أي تسويات مالية</span></li>
+                    <li><i class="fas fa-times"></i><span data-ar="لا نعرض أرباح المروجين أو أرباح الشركات" data-en="We do not display promoters' or companies' earnings">لا نعرض أرباح المروجين أو أرباح الشركات</span></li>
+                    <li><i class="fas fa-times"></i><span data-ar="لا نستقبل مدفوعات" data-en="We do not receive payments">لا نستقبل مدفوعات</span></li>
+                    <li><i class="fas fa-times"></i><span data-ar="لا نوزّع عمولات أو أرصدة" data-en="We do not distribute commissions or balances">لا نوزّع عمولات أو أرصدة</span></li>
+                </ul>
+            </div>
+
+            <div class="section-card">
+                <h2 class="section-title"><i class="fas fa-cogs"></i> <span data-ar="كيف يعمل النظام بالنسبة لك كمعلِن؟" data-en="How does the system work for you?">كيف يعمل النظام بالنسبة لك كمعلِن؟</span></h2>
+                <ul class="steps-list">
+                    <li><div class="step-number">1</div><span data-ar="تسجّل شركتك" data-en="Register your company">تسجّل شركتك</span></li>
+                    <li><div class="step-number">2</div><span data-ar="تضيف عرض الإحالة وشروطه" data-en="Add the referral offer and its terms">تضيف عرض الإحالة وشروطه</span></li>
+                    <li><div class="step-number">3</div><span data-ar="يحصل المروجون على رابط رسمي واحد" data-en="Promoters get one official link">يحصل المروجون على رابط رسمي واحد</span></li>
+                    <li><div class="step-number">4</div><span data-ar="تتم الإحالات مباشرة بينكم دون وسيط مالي" data-en="Referrals happen directly without intermediary">تتم الإحالات مباشرة بينكم دون وسيط مالي</span></li>
+                </ul>
+            </div>
+
+            <div class="section-card">
+                <h2 class="section-title"><i class="fas fa-star"></i> <span data-ar="لماذا تعتمد عروضك هنا؟" data-en="Why host your offers here?">لماذا تعتمد عروضك هنا؟</span></h2>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span data-ar="نظام إحالة رسمي ومنظّم" data-en="Official referral system">نظام إحالة رسمي ومنظّم</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-link"></i>
+                        <span data-ar="ربط مباشر وواضح مع المروجين" data-en="Direct connection with promoters">ربط مباشر وواضح مع المروجين</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-hand-holding-usd"></i>
+                        <span data-ar="بدون تدخل في الإيرادات أو التوزيع" data-en="No interference in revenues">بدون تدخل في الإيرادات أو التوزيع</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-sliders-h"></i>
+                        <span data-ar="إدارة سهلة دون أي متطلبات إضافية" data-en="Easy management">إدارة سهلة دون أي متطلبات إضافية</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="notice-card">
+                <h3><i class="fas fa-exclamation-circle"></i> <span data-ar="تنبيه واضح" data-en="Clear Notice">تنبيه واضح</span></h3>
+                <p data-ar="جميع بيانات الإحالة والاستخدام تظهر كتتبّع ارتباط فقط، ولا تعرض أي جوانب مالية أو أرصدة أو عمولات داخل النظام." data-en="All referral and usage data appears as link tracking only.">جميع بيانات الإحالة والاستخدام تظهر كتتبّع ارتباط فقط، ولا تعرض أي جوانب مالية أو أرصدة أو عمولات داخل النظام.</p>
+            </div>
+
+            <div class="support-card">
+                <h3><i class="fas fa-headset"></i> <span data-ar="دعم الشركات" data-en="Company Support">دعم الشركات</span></h3>
+                <p data-ar="لدعم الشركات والاستفسارات المتعلقة بالعروض والشروط:" data-en="For company support and inquiries:">لدعم الشركات والاستفسارات المتعلقة بالعروض والشروط:</p>
+                <a href="mailto:support@afftok.com" class="support-email">
+                    <i class="fas fa-envelope"></i>
+                    support@afftok.com
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 AffTok. <span data-ar="جميع الحقوق محفوظة" data-en="All rights reserved">جميع الحقوق محفوظة</span>.</p>
+        </div>
+    </footer>
+
+    <script>
+        let isArabic = true;
+        function toggleLanguage() {
+            isArabic = !isArabic;
+            document.body.classList.toggle('en', !isArabic);
+            document.documentElement.lang = isArabic ? 'ar' : 'en';
+            document.documentElement.dir = isArabic ? 'rtl' : 'ltr';
+            document.querySelectorAll('[data-ar]').forEach(el => {
+                el.textContent = isArabic ? el.dataset.ar : el.dataset.en;
+            });
+            document.querySelector('.lang-btn').textContent = isArabic ? 'EN' : 'عربي';
+        }
+    </script>
+</body>
+</html>

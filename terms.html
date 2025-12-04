@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شروط الاستخدام | AffTok</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary: #a31621;
+            --bg-dark: #151518;
+            --bg-card: #1e1e24;
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.8);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.8;
+        }
+
+        body.en {
+            font-family: 'Poppins', sans-serif;
+            direction: ltr;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(21, 21, 24, 0.95);
+            padding: 20px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 800;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 2px;
+        }
+
+        .lang-toggle {
+            background: rgba(163, 22, 33, 0.15);
+            border: 1px solid rgba(163, 22, 33, 0.3);
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .lang-toggle:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Content */
+        main {
+            padding: 120px 0 60px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 40px;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        .content-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 24px;
+        }
+
+        h2 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--primary);
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        ul {
+            color: var(--text-secondary);
+            margin: 16px 0;
+            padding-right: 24px;
+        }
+
+        body.en ul {
+            padding-right: 0;
+            padding-left: 24px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .update-date {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+            margin-top: 40px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-card);
+            padding: 30px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        footer a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin: 0 16px;
+        }
+
+        footer a:hover {
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="AffTok" class="logo-img">
+                <span class="logo-text">AFFTOK</span>
+            </a>
+            <button class="lang-toggle" onclick="toggleLanguage()">EN</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1 data-ar="شروط الاستخدام" data-en="Terms of Service">شروط الاستخدام</h1>
+
+            <div class="content-card">
+                <h2 data-ar="القبول بالشروط" data-en="Acceptance of Terms">القبول بالشروط</h2>
+                <p data-ar="باستخدامك لمنصة AffTok، فإنك توافق على الالتزام بهذه الشروط والأحكام. إذا كنت لا توافق على أي من هذه الشروط، يرجى عدم استخدام المنصة."
+                   data-en="By using the AffTok platform, you agree to be bound by these terms and conditions. If you do not agree to any of these terms, please do not use the platform.">
+                    باستخدامك لمنصة AffTok، فإنك توافق على الالتزام بهذه الشروط والأحكام. إذا كنت لا توافق على أي من هذه الشروط، يرجى عدم استخدام المنصة.
+                </p>
+            </div>
+
+            <div class="content-card">
+                <h2 data-ar="الخدمات المقدمة" data-en="Services Provided">الخدمات المقدمة</h2>
+                <p data-ar="توفر AffTok منصة للتسويق بالعمولة تربط المروجين بالشركات المعلنة. تشمل خدماتنا:"
+                   data-en="AffTok provides an affiliate marketing platform connecting promoters with advertisers. Our services include:">
+                    توفر AffTok منصة للتسويق بالعمولة تربط المروجين بالشركات المعلنة. تشمل خدماتنا:
+                </p>
+                <ul>
+                    <li data-ar="روابط إحالة فريدة وقابلة للتتبع" data-en="Unique and trackable referral links">روابط إحالة فريدة وقابلة للتتبع</li>
+                    <li data-ar="لوحة تحكم لمتابعة الأداء" data-en="Dashboard for performance tracking">لوحة تحكم لمتابعة الأداء</li>
+                    <li data-ar="نظام فرق ومسابقات" data-en="Teams and contests system">نظام فرق ومسابقات</li>
+                    <li data-ar="أدوات تحليل متقدمة" data-en="Advanced analytics tools">أدوات تحليل متقدمة</li>
+                </ul>
+            </div>
+
+            <div class="content-card">
+                <h2 data-ar="التزامات المستخدم" data-en="User Obligations">التزامات المستخدم</h2>
+                <ul>
+                    <li data-ar="تقديم معلومات صحيحة ودقيقة عند التسجيل" data-en="Provide accurate information when registering">تقديم معلومات صحيحة ودقيقة عند التسجيل</li>
+                    <li data-ar="عدم استخدام المنصة لأي أغراض غير قانونية" data-en="Not use the platform for any illegal purposes">عدم استخدام المنصة لأي أغراض غير قانونية</li>
+                    <li data-ar="عدم محاولة التلاعب بنظام التتبع أو النقرات" data-en="Not attempt to manipulate the tracking or click system">عدم محاولة التلاعب بنظام التتبع أو النقرات</li>
+                    <li data-ar="احترام حقوق الملكية الفكرية للآخرين" data-en="Respect the intellectual property rights of others">احترام حقوق الملكية الفكرية للآخرين</li>
+                    <li data-ar="عدم مشاركة بيانات حسابك مع الآخرين" data-en="Not share your account credentials with others">عدم مشاركة بيانات حسابك مع الآخرين</li>
+                </ul>
+            </div>
+
+            <div class="content-card">
+                <h2 data-ar="المحظورات" data-en="Prohibited Activities">المحظورات</h2>
+                <ul>
+                    <li data-ar="إنشاء نقرات وهمية أو احتيالية" data-en="Creating fake or fraudulent clicks">إنشاء نقرات وهمية أو احتيالية</li>
+                    <li data-ar="استخدام برامج آلية (bots) للنقر" data-en="Using automated programs (bots) for clicking">استخدام برامج آلية (bots) للنقر</li>
+                    <li data-ar="انتحال شخصية الآخرين" data-en="Impersonating others">انتحال شخصية الآخرين</li>
+                    <li data-ar="نشر محتوى مسيء أو غير قانوني" data-en="Publishing offensive or illegal content">نشر محتوى مسيء أو غير قانوني</li>
+                    <li data-ar="محاولة اختراق أو إتلاف المنصة" data-en="Attempting to hack or damage the platform">محاولة اختراق أو إتلاف المنصة</li>
+                </ul>
+            </div>
+
+            <div class="content-card">
+                <h2 data-ar="إنهاء الحساب" data-en="Account Termination">إنهاء الحساب</h2>
+                <p data-ar="يحق لنا إنهاء أو تعليق حسابك في أي وقت إذا انتهكت هذه الشروط، أو إذا اكتشفنا أي نشاط احتيالي أو مشبوه."
+                   data-en="We reserve the right to terminate or suspend your account at any time if you violate these terms, or if we detect any fraudulent or suspicious activity.">
+                    يحق لنا إنهاء أو تعليق حسابك في أي وقت إذا انتهكت هذه الشروط، أو إذا اكتشفنا أي نشاط احتيالي أو مشبوه.
+                </p>
+            </div>
+
+            <div class="content-card">
+                <h2 data-ar="إخلاء المسؤولية" data-en="Disclaimer">إخلاء المسؤولية</h2>
+                <p data-ar="AffTok هي منصة وسيطة للتتبع فقط. لا نتحمل مسؤولية أي نزاعات بين المروجين والشركات المعلنة. جميع الاتفاقيات المالية تتم مباشرة بين الأطراف المعنية."
+                   data-en="AffTok is an intermediary tracking platform only. We are not responsible for any disputes between promoters and advertisers. All financial agreements are made directly between the parties involved.">
+                    AffTok هي منصة وسيطة للتتبع فقط. لا نتحمل مسؤولية أي نزاعات بين المروجين والشركات المعلنة. جميع الاتفاقيات المالية تتم مباشرة بين الأطراف المعنية.
+                </p>
+            </div>
+
+            <div class="content-card">
+                <h2 data-ar="تعديل الشروط" data-en="Modification of Terms">تعديل الشروط</h2>
+                <p data-ar="نحتفظ بالحق في تعديل هذه الشروط في أي وقت. سيتم إخطارك بأي تغييرات جوهرية. استمرارك في استخدام المنصة بعد التعديلات يعني موافقتك عليها."
+                   data-en="We reserve the right to modify these terms at any time. You will be notified of any material changes. Your continued use of the platform after modifications means you agree to them.">
+                    نحتفظ بالحق في تعديل هذه الشروط في أي وقت. سيتم إخطارك بأي تغييرات جوهرية. استمرارك في استخدام المنصة بعد التعديلات يعني موافقتك عليها.
+                </p>
+            </div>
+
+            <div class="content-card">
+                <h2 data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</h2>
+                <p data-ar="إذا كان لديك أي أسئلة حول شروط الاستخدام، يرجى التواصل معنا عبر البريد الإلكتروني: contact@afftokapp.com"
+                   data-en="If you have any questions about these Terms of Service, please contact us at: contact@afftokapp.com">
+                    إذا كان لديك أي أسئلة حول شروط الاستخدام، يرجى التواصل معنا عبر البريد الإلكتروني: contact@afftokapp.com
+                </p>
+            </div>
+
+            <p class="update-date" data-ar="آخر تحديث: ديسمبر 2025" data-en="Last updated: December 2025">آخر تحديث: ديسمبر 2025</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+            <a href="privacy.html" data-ar="سياسة الخصوصية" data-en="Privacy Policy">سياسة الخصوصية</a>
+            <p style="margin-top: 20px; color: rgba(255,255,255,0.5);">© 2025 AffTok</p>
+        </div>
+    </footer>
+
+    <script>
+        let currentLang = 'ar';
+        function toggleLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            document.documentElement.lang = currentLang;
+            document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+            document.body.classList.toggle('en', currentLang === 'en');
+            document.querySelectorAll('[data-ar]').forEach(el => {
+                el.innerHTML = el.getAttribute(`data-${currentLang}`);
+            });
+            document.querySelector('.lang-toggle').textContent = currentLang === 'ar' ? 'EN' : 'عربي';
+        }
+    </script>
+</body>
+</html>
+
