@@ -319,25 +319,23 @@
             
             // Fetch team info from API
             fetch(`https://afftok-backend-prod-production.up.railway.app/api/teams/invite/${inviteCode}`)
-                .then(res => res.json())
+                .then(res => {
+                    if (!res.ok) throw new Error('Not found');
+                    return res.json();
+                })
                 .then(data => {
                     if (data.valid && data.team_name) {
                         teamName = data.team_name;
                         teamLogo = data.team_logo || '';
-                        updateTeamInfo();
+                        applyLanguage(); // Re-apply with team name
                     }
                 })
-                .catch(err => console.log('Could not fetch team info'));
+                .catch(err => {
+                    console.log('Team info not available yet');
+                    // Keep default "AffTok" - API will work after deploy
+                });
         } else {
             document.getElementById('inviteCode').textContent = '—';
-        }
-        
-        function updateTeamInfo() {
-            if (isArabic) {
-                document.getElementById('description').innerHTML = `لقد تمت دعوتك للانضمام لفريق "<strong>${teamName}</strong>"!<br>حمّل التطبيق وسجّل دخولك للانضمام.`;
-            } else {
-                document.getElementById('description').innerHTML = `You have been invited to join team "<strong>${teamName}</strong>"!<br>Download the app and sign in to join.`;
-            }
         }
         
         // Language state
