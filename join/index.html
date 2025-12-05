@@ -37,15 +37,43 @@
             padding: 20px;
         }
         
+        /* Language Toggle */
+        .lang-toggle {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+        
+        .lang-btn {
+            background: var(--primary);
+            border: none;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .lang-btn:hover {
+            background: var(--primary-dark);
+            transform: scale(1.05);
+        }
+        
         .container {
             text-align: center;
             max-width: 500px;
         }
         
         .logo {
-            width: 100px;
-            height: 100px;
-            margin-bottom: 30px;
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
             animation: pulse 2s ease-in-out infinite;
         }
         
@@ -55,9 +83,9 @@
         }
         
         .team-icon {
-            font-size: 80px;
+            font-size: 70px;
             color: var(--primary);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             animation: bounce 2s ease-in-out infinite;
         }
         
@@ -67,7 +95,7 @@
         }
         
         h1 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             margin-bottom: 15px;
             color: var(--text);
         }
@@ -83,7 +111,7 @@
         
         .invite-code span {
             color: var(--gold);
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 700;
             font-family: 'Poppins', monospace;
             letter-spacing: 2px;
@@ -91,9 +119,9 @@
         
         p {
             color: var(--text-muted);
-            font-size: 1.1rem;
+            font-size: 1rem;
             line-height: 1.8;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
         
         .download-buttons {
@@ -101,14 +129,14 @@
             gap: 15px;
             justify-content: center;
             flex-wrap: wrap;
-            margin-top: 30px;
+            margin-top: 25px;
         }
         
         .download-btn {
             display: flex;
             align-items: center;
             gap: 12px;
-            padding: 15px 25px;
+            padding: 12px 20px;
             border-radius: 12px;
             text-decoration: none;
             color: white;
@@ -120,7 +148,7 @@
         }
         
         .download-btn i {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
         }
         
         .download-btn .text {
@@ -129,53 +157,55 @@
         
         .download-btn .text small {
             display: block;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             opacity: 0.8;
         }
         
         .download-btn .text span {
-            font-size: 1rem;
+            font-size: 0.9rem;
         }
         
         .steps {
             background: rgba(255,255,255,0.05);
             border-radius: 15px;
-            padding: 25px;
-            margin-top: 40px;
+            padding: 20px;
+            margin-top: 30px;
             text-align: right;
         }
         
         .steps h3 {
             color: var(--gold);
-            margin-bottom: 20px;
-            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
         }
         
         .step {
             display: flex;
             align-items: center;
-            gap: 15px;
-            margin-bottom: 15px;
+            gap: 12px;
+            margin-bottom: 12px;
         }
         
         .step-num {
-            width: 35px;
-            height: 35px;
+            width: 30px;
+            height: 30px;
             background: var(--primary);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 700;
+            font-size: 14px;
             flex-shrink: 0;
         }
         
         .step-text {
             color: var(--text-muted);
+            font-size: 0.95rem;
         }
         
         .footer-link {
-            margin-top: 40px;
+            margin-top: 30px;
         }
         
         .footer-link a {
@@ -200,9 +230,22 @@
         html[lang="en"] .download-btn .text {
             text-align: left;
         }
+        
+        html[lang="en"] .lang-toggle {
+            left: auto;
+            right: 20px;
+        }
     </style>
 </head>
 <body>
+    <!-- Language Toggle -->
+    <div class="lang-toggle">
+        <button class="lang-btn" onclick="toggleLanguage()">
+            <i class="fas fa-globe"></i>
+            <span id="langText">English</span>
+        </button>
+    </div>
+
     <div class="container">
         <img src="../images/logo.png" alt="AffTok" class="logo" onerror="this.style.display='none'">
         
@@ -273,25 +316,60 @@
             document.getElementById('inviteCode').textContent = '—';
         }
         
-        // Language detection
-        const userLang = navigator.language || navigator.userLanguage;
-        const isArabic = userLang.startsWith('ar');
+        // Language state
+        let isArabic = true;
         
-        if (!isArabic) {
-            document.documentElement.lang = 'en';
-            document.documentElement.dir = 'ltr';
-            document.getElementById('title').textContent = 'Team Invitation';
-            document.getElementById('description').innerHTML = 'You have been invited to join a team on AffTok!<br>Download the app and sign in to join.';
-            document.getElementById('stepsTitle').textContent = 'How to join:';
-            document.getElementById('step1').textContent = 'Download AffTok app';
-            document.getElementById('step2').textContent = 'Create an account or sign in';
-            document.getElementById('step3').textContent = 'Go to Teams → Browse Teams';
-            document.getElementById('step4').textContent = 'Find the team and join!';
-            document.getElementById('iosLabel').textContent = 'Coming Soon';
-            document.getElementById('androidLabel').textContent = 'Coming Soon';
-            document.getElementById('homeLink').textContent = '← Back to Home';
+        // Check saved preference or browser language
+        const savedLang = localStorage.getItem('afftok_lang');
+        if (savedLang) {
+            isArabic = savedLang === 'ar';
+        } else {
+            const userLang = navigator.language || navigator.userLanguage;
+            isArabic = userLang.startsWith('ar');
+        }
+        
+        // Apply initial language
+        applyLanguage();
+        
+        function toggleLanguage() {
+            isArabic = !isArabic;
+            localStorage.setItem('afftok_lang', isArabic ? 'ar' : 'en');
+            applyLanguage();
+        }
+        
+        function applyLanguage() {
+            if (isArabic) {
+                document.documentElement.lang = 'ar';
+                document.documentElement.dir = 'rtl';
+                document.getElementById('title').textContent = 'دعوة للانضمام لفريق';
+                document.getElementById('description').innerHTML = 'لقد تمت دعوتك للانضمام لفريق في AffTok!<br>حمّل التطبيق وسجّل دخولك للانضمام.';
+                document.getElementById('stepsTitle').textContent = 'خطوات الانضمام:';
+                document.getElementById('step1').textContent = 'حمّل تطبيق AffTok';
+                document.getElementById('step2').textContent = 'سجّل حساب جديد أو سجّل دخولك';
+                document.getElementById('step3').textContent = 'اذهب للفرق → تصفح الفرق';
+                document.getElementById('step4').textContent = 'ابحث عن الفريق وانضم!';
+                document.getElementById('iosLabel').textContent = 'قريباً على';
+                document.getElementById('androidLabel').textContent = 'قريباً على';
+                document.getElementById('homeLink').textContent = '← العودة للصفحة الرئيسية';
+                document.getElementById('langText').textContent = 'English';
+                document.title = 'انضم للفريق | AffTok';
+            } else {
+                document.documentElement.lang = 'en';
+                document.documentElement.dir = 'ltr';
+                document.getElementById('title').textContent = 'Team Invitation';
+                document.getElementById('description').innerHTML = 'You have been invited to join a team on AffTok!<br>Download the app and sign in to join.';
+                document.getElementById('stepsTitle').textContent = 'How to join:';
+                document.getElementById('step1').textContent = 'Download AffTok app';
+                document.getElementById('step2').textContent = 'Create an account or sign in';
+                document.getElementById('step3').textContent = 'Go to Teams → Browse Teams';
+                document.getElementById('step4').textContent = 'Find the team and join!';
+                document.getElementById('iosLabel').textContent = 'Coming Soon';
+                document.getElementById('androidLabel').textContent = 'Coming Soon';
+                document.getElementById('homeLink').textContent = '← Back to Home';
+                document.getElementById('langText').textContent = 'عربي';
+                document.title = 'Join Team | AffTok';
+            }
         }
     </script>
 </body>
 </html>
-
