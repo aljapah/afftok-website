@@ -318,7 +318,7 @@
             document.getElementById('inviteCode').textContent = inviteCode;
             
             // Fetch team info from API
-            fetch(`https://afftok-backend-prod-production.up.railway.app/api/invite/${inviteCode}`)
+            fetch(`https://afftok-backend-prod-production.up.railway.app/api/teams/invite/${inviteCode}`)
                 .then(res => res.json())
                 .then(data => {
                     if (data.valid && data.team_name) {
