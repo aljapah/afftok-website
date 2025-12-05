@@ -310,10 +310,34 @@
         const parts = path.split('/');
         const inviteCode = parts[parts.length - 1] || parts[parts.length - 2];
         
+        // Team info
+        let teamName = 'AffTok';
+        let teamLogo = '';
+        
         if (inviteCode && inviteCode !== 'join' && inviteCode !== 'index.html') {
             document.getElementById('inviteCode').textContent = inviteCode;
+            
+            // Fetch team info from API
+            fetch(`https://afftok-backend-prod-production.up.railway.app/api/invite/${inviteCode}`)
+                .then(res => res.json())
+                .then(data => {
+                    if (data.valid && data.team_name) {
+                        teamName = data.team_name;
+                        teamLogo = data.team_logo || '';
+                        updateTeamInfo();
+                    }
+                })
+                .catch(err => console.log('Could not fetch team info'));
         } else {
             document.getElementById('inviteCode').textContent = '—';
+        }
+        
+        function updateTeamInfo() {
+            if (isArabic) {
+                document.getElementById('description').innerHTML = `لقد تمت دعوتك للانضمام لفريق "<strong>${teamName}</strong>"!<br>حمّل التطبيق وسجّل دخولك للانضمام.`;
+            } else {
+                document.getElementById('description').innerHTML = `You have been invited to join team "<strong>${teamName}</strong>"!<br>Download the app and sign in to join.`;
+            }
         }
         
         // Language state
@@ -342,7 +366,7 @@
                 document.documentElement.lang = 'ar';
                 document.documentElement.dir = 'rtl';
                 document.getElementById('title').textContent = 'دعوة للانضمام لفريق';
-                document.getElementById('description').innerHTML = 'لقد تمت دعوتك للانضمام لفريق في AffTok!<br>حمّل التطبيق وسجّل دخولك للانضمام.';
+                document.getElementById('description').innerHTML = `لقد تمت دعوتك للانضمام لفريق "<strong>${teamName}</strong>"!<br>حمّل التطبيق وسجّل دخولك للانضمام.`;
                 document.getElementById('stepsTitle').textContent = 'خطوات الانضمام:';
                 document.getElementById('step1').textContent = 'حمّل تطبيق AffTok';
                 document.getElementById('step2').textContent = 'سجّل حساب جديد أو سجّل دخولك';
@@ -352,12 +376,12 @@
                 document.getElementById('androidLabel').textContent = 'قريباً على';
                 document.getElementById('homeLink').textContent = '← العودة للصفحة الرئيسية';
                 document.getElementById('langText').textContent = 'English';
-                document.title = 'انضم للفريق | AffTok';
+                document.title = `انضم لفريق ${teamName} | AffTok`;
             } else {
                 document.documentElement.lang = 'en';
                 document.documentElement.dir = 'ltr';
                 document.getElementById('title').textContent = 'Team Invitation';
-                document.getElementById('description').innerHTML = 'You have been invited to join a team on AffTok!<br>Download the app and sign in to join.';
+                document.getElementById('description').innerHTML = `You have been invited to join team "<strong>${teamName}</strong>"!<br>Download the app and sign in to join.`;
                 document.getElementById('stepsTitle').textContent = 'How to join:';
                 document.getElementById('step1').textContent = 'Download AffTok app';
                 document.getElementById('step2').textContent = 'Create an account or sign in';
@@ -367,7 +391,7 @@
                 document.getElementById('androidLabel').textContent = 'Coming Soon';
                 document.getElementById('homeLink').textContent = '← Back to Home';
                 document.getElementById('langText').textContent = 'عربي';
-                document.title = 'Join Team | AffTok';
+                document.title = `Join ${teamName} | AffTok`;
             }
         }
     </script>
