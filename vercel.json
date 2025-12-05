@@ -3,6 +3,10 @@
     {
       "source": "/join/:code",
       "destination": "/join/index.html"
+    },
+    {
+      "source": "/promoter/:username",
+      "destination": "/promoter/index.html"
     }
   ]
 }
