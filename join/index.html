@@ -310,30 +310,15 @@
         const parts = path.split('/');
         const inviteCode = parts[parts.length - 1] || parts[parts.length - 2];
         
-        // Team info
-        let teamName = 'AffTok';
+        // Get team name from URL parameter (simple solution - no backend needed!)
+        const urlParams = new URLSearchParams(window.location.search);
+        let teamName = urlParams.get('team') || 'AffTok';
+        // Decode URL-encoded team name
+        teamName = decodeURIComponent(teamName);
         let teamLogo = '';
         
         if (inviteCode && inviteCode !== 'join' && inviteCode !== 'index.html') {
             document.getElementById('inviteCode').textContent = inviteCode;
-            
-            // Fetch team info from API
-            fetch(`https://afftok-backend-prod-production.up.railway.app/api/teams/invite/${inviteCode}`)
-                .then(res => {
-                    if (!res.ok) throw new Error('Not found');
-                    return res.json();
-                })
-                .then(data => {
-                    if (data.valid && data.team_name) {
-                        teamName = data.team_name;
-                        teamLogo = data.team_logo || '';
-                        applyLanguage(); // Re-apply with team name
-                    }
-                })
-                .catch(err => {
-                    console.log('Team info not available yet');
-                    // Keep default "AffTok" - API will work after deploy
-                });
         } else {
             document.getElementById('inviteCode').textContent = '—';
         }
