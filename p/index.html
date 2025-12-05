@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>AffTok</title>
+    <script>
+        const path = window.location.pathname;
+        const parts = path.split('/');
+        const id = parts[parts.length - 1] || parts[parts.length - 2];
+        
+        if (id && id !== 'p' && id !== 'index.html') {
+            window.location.href = 'https://afftok-backend-prod-production.up.railway.app/api/promoter/' + id;
+        } else {
+            window.location.href = '/';
+        }
+    </script>
+</head>
+<body></body>
+</html>
+

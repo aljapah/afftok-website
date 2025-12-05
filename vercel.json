@@ -5,8 +5,8 @@
       "destination": "/join/index.html"
     },
     {
-      "source": "/promoter/:username",
-      "destination": "/promoter/index.html"
+      "source": "/p/:id",
+      "destination": "/p/index.html"
     }
   ]
 }
